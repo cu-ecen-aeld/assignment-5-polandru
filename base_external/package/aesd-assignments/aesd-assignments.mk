@@ -15,7 +15,7 @@ AESD_ASSIGNMENTS_SITE_METHOD = git
 AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
 
 define AESD_ASSIGNMENTS_BUILD_CMDS
-	$(MAKE) $(TARGET_CONFIGURE_OPTS) CROSS_COMPILE=aarch64-none-linux-gnu- -C $(@D)/server all
+	$(MAKE) $(TARGET_CONFIGURE_OPTS) CROSS_COMPILE=/home/paulperdomo/gcc-arm/bin//aarch64-none-linux-gnu- -C $(@D)/server all
 endef
 
 # TODO add your writer, finder and finder-test utilities/scripts to the installation steps below
