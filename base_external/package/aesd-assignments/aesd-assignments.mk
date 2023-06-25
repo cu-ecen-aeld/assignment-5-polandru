@@ -15,11 +15,11 @@ AESD_ASSIGNMENTS_SITE_METHOD = git
 AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
 
 define AESD_ASSIGNMENTS_BUILD_CMDS
-	$(MAKE) $(TARGET_CONFIGURE_OPTS) PATH=${PATH} CROSS_COMPILE=/home/paulperdomo/gcc-arm/bin/aarch64-none-linux-gnu- -C $(@D)/server all
+	$(MAKE) $(TARGET_CONFIGURE_OPTS) PATH=/home/paulperdomo/gcc-arm/bin CROSS_COMPILE=aarch64-none-linux-gnu- -C $(@D)/server all
 endef
 
 # TODO add your writer, finder and finder-test utilities/scripts to the installation steps below
-define AESD_ASSIGNMENTS_INSTALL_TARGET_CMDS
+define AESD_ASSIGNMENTS_INSTALL_TARGET_CMDS 
 	
 	$(INSTALL) -m 0755 $(@D)/server/aesdsocket $(TARGET_DIR)/usr/bin/aesdsocket
 	$(INSTALL) -m 0755 $(@D)/server/aesdsocket-start-stop $(TARGET_DIR)/etc/init.d/S99aesdsocket
